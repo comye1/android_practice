@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">HelloAndroid</string>
     <string name="button1">버튼을 눌러주세요</string>
+    <string name="button2">네이버 열기 / layout weight = 2</string>
+    <string name="button3">갤러리 열기 / background = colorPrimary</string>
+    <string name="button4">114 전화하기</string>
+    <string name="button5">종료하기 / layout weight 없음</string>
 </resources>
