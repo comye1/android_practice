@@ -82,6 +82,9 @@ public class MainActivity extends AppCompatActivity {
 
                 if(num1.equals("")||num2.equals("")){
                     Toast.makeText(getApplicationContext(), "숫자를 입력하세요", Toast.LENGTH_SHORT).show();
+                }else if(num2.equals("0")) {
+                    Toast.makeText(getApplicationContext(), "0으로 나눌 수 없습니다", Toast.LENGTH_SHORT).show();
+                    return false;
                 }else{
                     double result = Double.parseDouble(num1) / Double.parseDouble(num2);
                     resText.setText("계산 결과 : " + result);
@@ -99,6 +102,9 @@ public class MainActivity extends AppCompatActivity {
 
                 if(num1.equals("")||num2.equals("")){
                     Toast.makeText(getApplicationContext(), "숫자를 입력하세요", Toast.LENGTH_SHORT).show();
+                }else if(num2.equals("0")) {
+                    Toast.makeText(getApplicationContext(), "0으로 나눌 수 없습니다", Toast.LENGTH_SHORT).show();
+                    return false;
                 }else{
                     double result = Double.parseDouble(num1) % Double.parseDouble(num2);
                     resText.setText("계산 결과 : " + result);
