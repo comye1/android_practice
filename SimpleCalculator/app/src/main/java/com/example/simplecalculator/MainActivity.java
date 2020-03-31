@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     EditText num1Text, num2Text;
@@ -32,42 +33,59 @@ public class MainActivity extends AppCompatActivity {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int num1 = Integer.parseInt(num1Text.getText().toString());
-                int num2 = Integer.parseInt(num2Text.getText().toString());
+                String num1 = num1Text.getText().toString();
+                String num2 = num2Text.getText().toString();
 
-                int result = num1 + num2;
-                resText.setText("계산 결과 : " + result);
+                if(num1.isEmpty()||num2.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "숫자를 입력하세요", Toast.LENGTH_SHORT);
+                }else{
+                    double result = Double.parseDouble(num1)+ Double.parseDouble(num2);
+                    resText.setText("계산 결과 : " + result);
+                }
+
             }
         });
         subButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int num1 = Integer.parseInt(num1Text.getText().toString());
-                int num2 = Integer.parseInt(num2Text.getText().toString());
+                String num1 = num1Text.getText().toString();
+                String num2 = num2Text.getText().toString();
 
-                int result = num1 - num2;
-                resText.setText("계산 결과 : " + result);
+                if(num1.isEmpty()||num2.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "숫자를 입력하세요", Toast.LENGTH_SHORT);
+                }else{
+                    double result = Double.parseDouble(num1) - Double.parseDouble(num2);
+                    resText.setText("계산 결과 : " + result);
+                }
             }
         });
         mulButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int num1 = Integer.parseInt(num1Text.getText().toString());
-                int num2 = Integer.parseInt(num2Text.getText().toString());
+                String num1 = num1Text.getText().toString();
+                String num2 = num2Text.getText().toString();
 
-                int result = num1 * num2;
-                resText.setText("계산 결과 : " + result);
+                if(num1.isEmpty()||num2.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "숫자를 입력하세요", Toast.LENGTH_SHORT);
+                }else{
+                    double result = Double.parseDouble(num1) * Double.parseDouble(num2);
+                    resText.setText("계산 결과 : " + result);
+                }
             }
         });
 
         divButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                int num1 = Integer.parseInt(num1Text.getText().toString());
-                int num2 = Integer.parseInt(num2Text.getText().toString());
+                String num1 = num1Text.getText().toString();
+                String num2 = num2Text.getText().toString();
 
-                int result = num1 / num2;
-                resText.setText("계산 결과 : " + result);
+                if(num1.isEmpty()||num2.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "숫자를 입력하세요", Toast.LENGTH_SHORT);
+                }else{
+                    double result = Double.parseDouble(num1) / Double.parseDouble(num2);
+                    resText.setText("계산 결과 : " + result);
+                }
 
                 return false;
             }
