@@ -12,8 +12,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     EditText num1Text, num2Text;
-    Button addButton, subButton, mulButton, divButton;
-    Button addButton, subButton, mulButton, divButton;
+    Button addButton, subButton, mulButton, divButton, remButton;
     TextView resText;
 
     @Override
@@ -29,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         subButton = (Button)findViewById(R.id.substractButton);
         mulButton = (Button)findViewById(R.id.multiplyButton);
         divButton = (Button)findViewById(R.id.divideButton);
+        remButton = (Button)findViewById(R.id.remainderButton);
         resText = (TextView)findViewById(R.id.TextResult);
 
         addButton.setOnClickListener(new View.OnClickListener() {
@@ -84,6 +84,23 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "숫자를 입력하세요", Toast.LENGTH_SHORT).show();
                 }else{
                     double result = Double.parseDouble(num1) / Double.parseDouble(num2);
+                    resText.setText("계산 결과 : " + result);
+                }
+
+                return false;
+            }
+        });
+
+        remButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                String num1 = num1Text.getText().toString().trim();
+                String num2 = num2Text.getText().toString().trim();
+
+                if(num1.equals("")||num2.equals("")){
+                    Toast.makeText(getApplicationContext(), "숫자를 입력하세요", Toast.LENGTH_SHORT).show();
+                }else{
+                    double result = Double.parseDouble(num1) % Double.parseDouble(num2);
                     resText.setText("계산 결과 : " + result);
                 }
 
