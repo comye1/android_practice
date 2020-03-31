@@ -55,5 +55,6 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:srcCompat="@drawable/oreo_logo" />
+        app:srcCompat="@drawable/oreo_logo"
+        android:id="@+id/imageView"/>
 </LinearLayout>
