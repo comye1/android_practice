@@ -13,6 +13,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     EditText num1Text, num2Text;
     Button addButton, subButton, mulButton, divButton;
+    Button addButton, subButton, mulButton, divButton;
     TextView resText;
 
     @Override
@@ -47,10 +48,10 @@ public class MainActivity extends AppCompatActivity {
         subButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String num1 = num1Text.getText().toString();
-                String num2 = num2Text.getText().toString();
+                String num1 = num1Text.getText().toString().trim();
+                String num2 = num2Text.getText().toString().trim();
 
-                if(num1.isEmpty()||num2.isEmpty()){
+                if(num1.equals("")||num2.equals("")){
                     Toast.makeText(getApplicationContext(), "숫자를 입력하세요", Toast.LENGTH_SHORT).show();
                 }else{
                     double result = Double.parseDouble(num1) - Double.parseDouble(num2);
@@ -61,10 +62,10 @@ public class MainActivity extends AppCompatActivity {
         mulButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String num1 = num1Text.getText().toString();
-                String num2 = num2Text.getText().toString();
+                String num1 = num1Text.getText().toString().trim();
+                String num2 = num2Text.getText().toString().trim();
 
-                if(num1.isEmpty()||num2.isEmpty()){
+                if(num1.equals("")||num2.equals("")){
                     Toast.makeText(getApplicationContext(), "숫자를 입력하세요", Toast.LENGTH_SHORT).show();
                 }else{
                     double result = Double.parseDouble(num1) * Double.parseDouble(num2);
@@ -76,10 +77,10 @@ public class MainActivity extends AppCompatActivity {
         divButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                String num1 = num1Text.getText().toString();
-                String num2 = num2Text.getText().toString();
+                String num1 = num1Text.getText().toString().trim();
+                String num2 = num2Text.getText().toString().trim();
 
-                if(num1.isEmpty()||num2.isEmpty()){
+                if(num1.equals("")||num2.equals("")){
                     Toast.makeText(getApplicationContext(), "숫자를 입력하세요", Toast.LENGTH_SHORT).show();
                 }else{
                     double result = Double.parseDouble(num1) / Double.parseDouble(num2);
