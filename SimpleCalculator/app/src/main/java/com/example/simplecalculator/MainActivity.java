@@ -33,16 +33,15 @@ public class MainActivity extends AppCompatActivity {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String num1 = num1Text.getText().toString();
-                String num2 = num2Text.getText().toString();
+                String num1 = num1Text.getText().toString().trim();
+                String num2 = num2Text.getText().toString().trim();
 
-                if(num1.isEmpty()||num2.isEmpty()){
-                    Toast.makeText(getApplicationContext(), "숫자를 입력하세요", Toast.LENGTH_SHORT);
+                if(num1.equals("")||num2.equals("")){
+                    Toast.makeText(getApplicationContext(), "숫자를 입력하세요", Toast.LENGTH_SHORT).show();
                 }else{
-                    double result = Double.parseDouble(num1)+ Double.parseDouble(num2);
+                    double result = Double.parseDouble(num1) + Double.parseDouble(num2);
                     resText.setText("계산 결과 : " + result);
                 }
-
             }
         });
         subButton.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 String num2 = num2Text.getText().toString();
 
                 if(num1.isEmpty()||num2.isEmpty()){
-                    Toast.makeText(getApplicationContext(), "숫자를 입력하세요", Toast.LENGTH_SHORT);
+                    Toast.makeText(getApplicationContext(), "숫자를 입력하세요", Toast.LENGTH_SHORT).show();
                 }else{
                     double result = Double.parseDouble(num1) - Double.parseDouble(num2);
                     resText.setText("계산 결과 : " + result);
@@ -66,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 String num2 = num2Text.getText().toString();
 
                 if(num1.isEmpty()||num2.isEmpty()){
-                    Toast.makeText(getApplicationContext(), "숫자를 입력하세요", Toast.LENGTH_SHORT);
+                    Toast.makeText(getApplicationContext(), "숫자를 입력하세요", Toast.LENGTH_SHORT).show();
                 }else{
                     double result = Double.parseDouble(num1) * Double.parseDouble(num2);
                     resText.setText("계산 결과 : " + result);
@@ -81,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 String num2 = num2Text.getText().toString();
 
                 if(num1.isEmpty()||num2.isEmpty()){
-                    Toast.makeText(getApplicationContext(), "숫자를 입력하세요", Toast.LENGTH_SHORT);
+                    Toast.makeText(getApplicationContext(), "숫자를 입력하세요", Toast.LENGTH_SHORT).show();
                 }else{
                     double result = Double.parseDouble(num1) / Double.parseDouble(num2);
                     resText.setText("계산 결과 : " + result);
