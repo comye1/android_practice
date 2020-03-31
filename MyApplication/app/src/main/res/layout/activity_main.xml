@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
+        android:selectAllOnFocus="true"
         android:text="아무 글자 또는 웹 주소를 입력하세요"
         android:textSize="24sp" />
 
