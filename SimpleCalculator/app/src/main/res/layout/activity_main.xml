@@ -10,7 +10,7 @@
         android:id="@+id/num1Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="숫자1"
+        android:hint="숫자1"
         android:textSize="18dp"
         android:layout_margin="10dp"/>
 
@@ -18,7 +18,7 @@
         android:id="@+id/num2Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="숫자2"
+        android:hint="숫자2"
         android:textSize="18dp"
         android:layout_margin="10dp"/>
 
