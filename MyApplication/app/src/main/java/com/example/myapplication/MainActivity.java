@@ -2,6 +2,8 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,6 +30,15 @@ public class MainActivity extends AppCompatActivity {
         button2 = (Button) findViewById(R.id.button2);
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         imageView = (ImageView) findViewById(R.id.imageView);
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String string = editText.getText().toString();
+                Intent newIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(string));
+                startActivity(newIntent);
+            }
+        });
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
