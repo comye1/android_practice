@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,6 +31,14 @@ public class MainActivity extends AppCompatActivity {
         button2 = (Button) findViewById(R.id.button2);
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         imageView = (ImageView) findViewById(R.id.imageView);
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String string = editText.getText().toString();
+                Toast.makeText(getApplicationContext(), string, Toast.LENGTH_SHORT).show();
+            }
+        });
 
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
