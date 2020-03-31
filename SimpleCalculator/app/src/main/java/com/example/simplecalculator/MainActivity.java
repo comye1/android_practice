@@ -3,6 +3,7 @@ package com.example.simplecalculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        setTitle("간단 계산기");
+
         num1Text = (EditText)findViewById(R.id.num1Text);
         num2Text = (EditText)findViewById(R.id.num2Text);
         addButton = (Button)findViewById(R.id.addButton);
@@ -55,14 +59,17 @@ public class MainActivity extends AppCompatActivity {
                 resText.setText("계산 결과 : " + result);
             }
         });
-        divButton.setOnClickListener(new View.OnClickListener() {
+
+        divButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
+            public boolean onTouch(View v, MotionEvent event) {
                 int num1 = Integer.parseInt(num1Text.getText().toString());
                 int num2 = Integer.parseInt(num2Text.getText().toString());
 
                 int result = num1 / num2;
                 resText.setText("계산 결과 : " + result);
+
+                return false;
             }
         });
     }
