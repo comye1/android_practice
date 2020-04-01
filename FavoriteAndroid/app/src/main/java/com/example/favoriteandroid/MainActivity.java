@@ -12,6 +12,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -54,7 +55,34 @@ public class MainActivity extends AppCompatActivity {
                     oreo.setChecked(false);
                     pie.setChecked(false);
                     q.setChecked(false);
+                    imageView.setVisibility(View.INVISIBLE);
                 }
+            }
+        });
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch(checkedId){
+                    case R.id.rbOreo:
+                        imageView.setImageResource(R.drawable.oreo_logo);
+                        break;
+                    case R.id.rbPie:
+                        imageView.setImageResource(R.drawable.pie_logo);
+                        break;
+                    case R.id.rbQ:
+                        imageView.setImageResource(R.drawable.q_logo);
+                }
+                imageView.setVisibility(View.VISIBLE);
+
+            }
+        });
+
+        btnFinish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "종료됩니다.", Toast.LENGTH_SHORT);
+                finish();
             }
         });
     }
