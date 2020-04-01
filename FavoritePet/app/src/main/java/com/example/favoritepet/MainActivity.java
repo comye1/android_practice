@@ -43,6 +43,11 @@ public class MainActivity extends AppCompatActivity {
                     invisibleText.setVisibility(View.VISIBLE);
                     radioGroup.setVisibility(View.VISIBLE);
                     selectButton.setVisibility(View.VISIBLE);
+                }else{
+                    invisibleText.setVisibility(View.INVISIBLE);
+                    radioGroup.setVisibility(View.INVISIBLE);
+                    selectButton.setVisibility(View.INVISIBLE);
+                    imageView.setVisibility(View.INVISIBLE);
                 }
             }
         });
