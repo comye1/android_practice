@@ -73,7 +73,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
-        android:src="@drawable/puppy"
+        android:src=""
         android:layout_margin="5dp"
         android:visibility="invisible"/>
 </LinearLayout>

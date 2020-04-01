@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
                     invisibleText.setVisibility(View.VISIBLE);
                     radioGroup.setVisibility(View.VISIBLE);
                     selectButton.setVisibility(View.VISIBLE);
+                    imageView.setVisibility(View.VISIBLE);
                 }else{
                     invisibleText.setVisibility(View.INVISIBLE);
                     radioGroup.setVisibility(View.INVISIBLE);
@@ -58,15 +59,12 @@ public class MainActivity extends AppCompatActivity {
                 switch(radioGroup.getCheckedRadioButtonId()){
                     case R.id.radioDog:
                         imageView.setImageResource(R.drawable.puppy);
-                        imageView.setVisibility(View.VISIBLE);
                         break;
                     case R.id.radioCat:
                         imageView.setImageResource(R.drawable.cat);
-                        imageView.setVisibility(View.VISIBLE);
                         break;
                     case R.id.radioRabbit:
                         imageView.setImageResource(R.drawable.rabbit);
-                        imageView.setVisibility(View.VISIBLE);
                         break;
 
                         default:
