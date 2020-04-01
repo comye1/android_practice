@@ -47,6 +47,10 @@ public class MainActivity extends AppCompatActivity {
                 }else{
                     invisibleText.setVisibility(View.INVISIBLE);
                     radioGroup.setVisibility(View.INVISIBLE);
+                    dog.setChecked(false);
+                    cat.setChecked(false);
+                    rabbit.setChecked(false);
+                    imageView.setImageResource(0);
                     selectButton.setVisibility(View.INVISIBLE);
                     imageView.setVisibility(View.INVISIBLE);
                 }
