@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                         imageView.setImageResource(R.drawable.rabbit);
                         imageView.setVisibility(View.VISIBLE);
                         break;
+
                         default:
                             Toast.makeText(getApplicationContext(),"선택해주세요",Toast.LENGTH_SHORT).show();
                 }
