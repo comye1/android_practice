@@ -45,5 +45,25 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        selectButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch(radioGroup.getCheckedRadioButtonId()){
+                    case R.id.radioDog:
+                        imageView.setImageResource(R.drawable.puppy);
+                        imageView.setVisibility(View.VISIBLE);
+                        break;
+                    case R.id.radioCat:
+                        imageView.setImageResource(R.drawable.cat);
+                        imageView.setVisibility(View.VISIBLE);
+                        break;
+                    case R.id.radioRabbit:
+                        imageView.setImageResource(R.drawable.rabbit);
+                        imageView.setVisibility(View.VISIBLE);
+                        break;
+                }
+            }
+        });
     }
 }
