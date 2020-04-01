@@ -81,8 +81,15 @@ public class MainActivity extends AppCompatActivity {
         btnFinish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "종료됩니다.", Toast.LENGTH_SHORT);
+                Toast.makeText(getApplicationContext(), "종료됩니다.", Toast.LENGTH_SHORT).show();
                 finish();
+            }
+        });
+
+        btnReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                swStart.setChecked(false);
             }
         });
     }
