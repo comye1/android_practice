@@ -3,6 +3,7 @@ package com.example.favoritepet;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -38,7 +39,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(checkStart.isChecked()) {
-
+                    invisibleText.setVisibility(View.VISIBLE);
+                    radioGroup.setVisibility(View.VISIBLE);
+                    selectButton.setVisibility(View.VISIBLE);
                 }
             }
         });
