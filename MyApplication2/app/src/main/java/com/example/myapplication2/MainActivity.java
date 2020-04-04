@@ -35,5 +35,16 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        cbClickable.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    button.setClickable(true);
+                }else{
+                    button.setClickable(false);
+                }
+            }
+        });
     }
 }
