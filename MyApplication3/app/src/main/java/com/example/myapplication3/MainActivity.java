@@ -3,6 +3,8 @@ package com.example.myapplication3;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
@@ -22,14 +24,33 @@ public class MainActivity extends AppCompatActivity {
 
         editText = (EditText) findViewById(R.id.editText);
 
-        editText.setOnKeyListener(new View.OnKeyListener() {
+//        editText.setOnKeyListener(new View.OnKeyListener() {
+//            @Override
+//            public boolean onKey(View v, int keyCode, KeyEvent event) {
+//
+//                Toast.makeText(getApplicationContext(), editText.getText().toString(), Toast.LENGTH_SHORT).show();
+//
+//                return false;
+//            }
+//        });
+
+        editText.addTextChangedListener(new TextWatcher() {
             @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
 
-                Toast.makeText(getApplicationContext(), editText.getText().toString(), Toast.LENGTH_SHORT).show();
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
 
-                return false;
+            @Override
+            public void afterTextChanged(Editable s) {
+//                Toast.makeText(getApplicationContext(), "text changed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), editText.getText(), Toast.LENGTH_SHORT).show();
+      //on에 쓸 때와 같은 기능을 한다.
             }
         });
+
+
     }
 }
