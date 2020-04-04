@@ -46,5 +46,16 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        cbRotate.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    button.setRotation(45);
+                }else{
+                    button.setRotation(0);
+                }
+            }
+        });
     }
 }
