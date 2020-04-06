@@ -5,3 +5,5 @@
 2020/04/01 FavoritePet FavoriteAndroid
 
 2020/04/04 MyApplication2 MyApplication3 MyApplication4
+
+2020/04/06 layout_practice
