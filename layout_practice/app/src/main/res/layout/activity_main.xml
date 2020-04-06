@@ -4,27 +4,54 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Button
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:gravity="top|right"
-        android:layout_gravity="center_horizontal"
-        android:text="버튼1"/>
-
-    <Button
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:gravity="center_vertical|left"
-        android:layout_gravity="left"
-        android:text="버튼2"/>
-
-    <Button
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:gravity="bottom|right"
-        android:layout_gravity="right"
-        android:text="버튼3"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#"
+        android:gravity="center">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="버튼1"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="버튼2"/>
+    </LinearLayout>
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#00ff00"
+        android:gravity="center">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="버튼3"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="버튼4"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#0000ff"
+        android:gravity="center">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="버튼5"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="버튼6"/>
+    </LinearLayout>
 
 </LinearLayout>
