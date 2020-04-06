@@ -6,7 +6,9 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,18 +24,27 @@ public class MainActivity extends AppCompatActivity {
 
         LinearLayout baseLayout = new LinearLayout(this);
         baseLayout.setOrientation(LinearLayout.VERTICAL);
-        baseLayout.setBackgroundColor(Color.rgb(0,255,0));
         setContentView(baseLayout, params);
 
-        Button btn = new Button(this);
-        btn.setText("버튼입니다.");
-        btn.setBackgroundColor(Color.MAGENTA);
-        baseLayout.addView(btn);
+        final EditText editText = new EditText(this);
+        editText.setHint("입력하세요");
+        baseLayout.addView(editText);
 
-        btn.setOnClickListener(new View.OnClickListener() {
+        Button button = new Button(this);
+        button.setBackgroundColor(Color.rgb(200,255,0));
+        button.setText("버튼입니다");
+        baseLayout.addView(button);
+
+        final TextView textView = new TextView(this);
+        textView.setTextColor(Color.MAGENTA);
+        textView.setTextSize(32);
+        baseLayout.addView(textView);
+
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "코드로 생성한 버튼입니다.", Toast.LENGTH_SHORT).show();
+                String str = editText.getText().toString();
+                textView.setText(str);
             }
         });
     }
