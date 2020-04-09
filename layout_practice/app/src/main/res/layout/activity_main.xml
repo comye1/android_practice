@@ -3,34 +3,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/baseBtn1"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:text="기준1"/>
+        android:id="@+id/telText"
+        android:text="전화번호"
+        android:layout_alignBaseline="@id/telEdit"
+        android:textSize="24sp"
+        android:layout_margin="10dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/telEdit"
+        android:hint="010-0000-0000"
+        android:layout_toRightOf="@+id/telText"
+        android:textSize="24sp"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/submitBtn"
+        android:text="입력"
+        android:layout_toLeftOf="@id/cancelBtn"
+        android:layout_below="@id/telEdit"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cancelBtn"
+        android:text="취소"
         android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:id="@+id/baseBtn2"
-        android:text="기준2"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/baseBtn1"
-        android:layout_above="@+id/baseBtn2"
-        android:text="1번"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/baseBtn1"
-        android:text="2번"/>
+        android:layout_below="@+id/telEdit"/>
 
 </RelativeLayout>
