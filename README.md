@@ -64,3 +64,7 @@
         //"text"로 value를 저장, commit
     }
 ```
+----------------------
+
+### layout_weight로 꽉 채우기
+TimeReservation 레이아웃 -> 꽉 채우고 싶은 레이아웃에 layout_weight = 1 지정. 
