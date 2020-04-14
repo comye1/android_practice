@@ -6,14 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TimePicker
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:timePickerMode="spinner"/>
     <DatePicker
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:datePickerMode="spinner"/>
-
+        android:datePickerMode="calendar"/>
 
 </LinearLayout>
