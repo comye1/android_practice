@@ -12,6 +12,8 @@
 
 2020/04/10 (~ layout_practice) Chapter5_7 GridCalculator
 
+2020/04/14 AdvancedWidthets TimeReservation
+
 -----------------------
 
 ## ListView 간단 사용법
@@ -67,4 +69,4 @@
 ----------------------
 
 ### layout_weight로 꽉 채우기
-TimeReservation 레이아웃 -> 꽉 채우고 싶은 레이아웃에 layout_weight = 1 지정. 
+> TimeReservation 레이아웃 -> 꽉 채우고 싶은 레이아웃에 layout_weight = 1 지정. 
