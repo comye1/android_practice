@@ -14,7 +14,7 @@
 
 -----------------------
 
-## ListView 사용법
+## ListView 간단 사용법
 
 ```
         list = (ListView)findViewById(R.id.list); 
@@ -36,4 +36,31 @@
         
         adapter.notifyDataSetChanged();
         //리스트뷰 갱신
+```
+----------------------
+
+## SharedPreference 간단 사용법
+
+```
+        SharedPreferences sharedPreferences = getSharedPreferences("file", MODE_PRIVATE);
+        //"file"은 파일 이름, 모드 설정
+        String value = sharedPreferences.getString("text","");
+        //위 sharedPreference에 "text"로 저장된 값을 value로 받아옴, 존재하지 않는 경우 ""
+        editText.setText(value);
+```
+
+```
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //앱 종료시 저장하기 위함
+        String value = editText.getText().toString();
+        
+        SharedPreferences sharedPreferences = getSharedPreferences("file", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        
+        editor.putString("text", value);
+        editor.commit();
+        //"text"로 value를 저장, commit
+    }
 ```
