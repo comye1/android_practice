@@ -6,32 +6,41 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="서랍 밖"/>
-    <SlidingDrawer
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:handle="@id/handle"
-        android:content="@id/content">
+        android:orientation="horizontal">
         <Button
-            android:layout_width="wrap_content"
+            android:id="@+id/prev"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="서랍 손잡이"
-            android:id="@+id/handle"/>
+            android:layout_weight="1"
+            android:text="이전화면"/>
+        <Button
+            android:id="@+id/next"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="다음화면"/>
+
+    </LinearLayout>
+    <ViewFlipper
+        android:id="@+id/viewFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/content"
-            android:background="#CDDC39"
-            android:orientation="vertical"
-            android:gravity="center">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="서랍 안"/>
-        </LinearLayout>
+            android:background="#aa00bb"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00BCD4"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFC107"/>
 
-    </SlidingDrawer>
+    </ViewFlipper>
 </LinearLayout>
