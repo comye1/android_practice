@@ -12,7 +12,9 @@
 
 2020/04/10 (~ layout_practice) Chapter5_7 GridCalculator
 
-2020/04/14 AdvancedWidthets TimeReservation
+2020/04/14 AdvancedWidgets TimeReservation ScrollList
+
+2020/04/15 (~AdvancedWidgets) AutoFlipping TabHostPet
 
 -----------------------
 
