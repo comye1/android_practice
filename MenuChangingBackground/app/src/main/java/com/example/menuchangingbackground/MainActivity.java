@@ -46,10 +46,12 @@ public class MainActivity extends AppCompatActivity {
                 baseLayout.setBackgroundColor(Color.BLUE);
                 return true;
             case R.id.subRotate:
-                button.setRotation(45);
+//                button.setRotation(45);
+                button.setRotation(button.getRotation()+45);
                 return true;
             case R.id.subSize:
-                button.setScaleX(2);
+//                button.setScaleX(2);
+                button.setScaleX(button.getScaleX()*2);
                 return true;
         }
         return false;
