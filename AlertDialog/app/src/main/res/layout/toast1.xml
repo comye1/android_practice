@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical"
-    android:gravity="center_horizontal">
+    android:background="#FF5252"
+    android:gravity="center">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher_foreground"/>
 
     <TextView
-        android:id="@+id/textview_Name"
+        android:id="@+id/textView_Toast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="이름"/>
+        android:text="Text"
+        android:textSize="20dp"/>
 
-    <TextView
-        android:id="@+id/textView_Email"
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="이메일"/>
+        android:src="@drawable/ic_launcher_foreground"/>
 
-    <Button
-        android:id="@+id/button_Input"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="입력하기"/>
 </LinearLayout>
