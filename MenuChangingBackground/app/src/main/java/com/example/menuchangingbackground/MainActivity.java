@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.SubMenu;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
@@ -24,34 +25,38 @@ public class MainActivity extends AppCompatActivity {
         baseLayout = (LinearLayout)findViewById(R.id.baseLayout);
         button = (Button)findViewById(R.id.button);
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu1, menu);
+        menu.add(0,1,0,"RED");
+        menu.add(0,2,0,"GREEN");
+        menu.add(0,3,0,"BLUE");
+
+        SubMenu subMenu = menu.addSubMenu("버튼 변경");
+        subMenu.add(0,4,0,"버튼 45도 회전");
+        subMenu.add(0,5,0,"버튼 2배 확대");
 
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.itemRed:
+        switch(item.getItemId()){
+            case 1:
                 baseLayout.setBackgroundColor(Color.RED);
                 return true;
-            case R.id.itemGreen:
+            case 2:
                 baseLayout.setBackgroundColor(Color.GREEN);
                 return true;
-            case R.id.itemBlue:
+            case 3:
                 baseLayout.setBackgroundColor(Color.BLUE);
                 return true;
-            case R.id.subRotate:
-//                button.setRotation(45);
-                button.setRotation(button.getRotation()+45);
+            case 4:
+                button.setRotation(45);
                 return true;
-            case R.id.subSize:
-//                button.setScaleX(2);
-                button.setScaleX(button.getScaleX()*2);
+            case 5:
+                button.setScaleX(2);
                 return true;
         }
         return false;
