@@ -72,7 +72,9 @@ public class MainActivity extends AppCompatActivity {
             input = openFileInput(fileName);
             byte[] text = new byte[500];
             input.read(text);
+            diary = new String(text).trim();
             input.close();
+            button_Write.setText("수정하기");
         }catch (IOException e){
             editText_Diary.setHint("일기 없음");
             button_Write.setText("새로 저장");
