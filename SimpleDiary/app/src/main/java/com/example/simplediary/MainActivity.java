@@ -3,12 +3,15 @@ package com.example.simplediary;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.io.EOFException;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
@@ -45,6 +48,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        button_Write.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try{
+                    FileOutputStream output = openFileOutput(fileName, MODE_PRIVATE);
+                    String str = editText_Diary.getText().toString();
+                    output.write(str.getBytes());
+                    output.close();
+                    Toast.makeText(getApplicationContext(), fileName+"이 저장됨", Toast.LENGTH_SHORT).show();
+                }catch (IOException e) {
+
+                }
+            }
+        });
 
     }
 
