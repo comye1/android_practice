@@ -38,6 +38,18 @@ public class MainActivity extends AppCompatActivity {
         final int month = calendar.get(Calendar.MONTH);
         int day = calendar.get(Calendar.DAY_OF_MONTH);
 
+        fileName = year+"_"+(month+1)+"_"+day+".txt";
+        try{
+            FileInputStream first = openFileInput(fileName);
+            String str = readDiary(fileName);
+            editText_Diary.setText(str);
+            button_Write.setEnabled(true);
+        }catch(IOException e){
+
+        }
+
+
+
         datePicker.init(year, month, day, new DatePicker.OnDateChangedListener() {
             @Override
             public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
