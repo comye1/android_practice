@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -27,6 +28,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 public class AuthActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    private FirebaseUser user;
     Button btn_Logout, btn_Revoke;
 
     @Override
@@ -34,6 +36,9 @@ public class AuthActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
         mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser();
+
+        Toast.makeText(getApplicationContext(), user.getEmail() + "로 로그인 되었습니다.", Toast.LENGTH_LONG).show();
 
         btn_Logout = findViewById(R.id.btn_LogOut);
         btn_Revoke = findViewById(R.id.btn_Revoke);
@@ -49,8 +54,22 @@ public class AuthActivity extends AppCompatActivity {
         btn_Revoke.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mAuth.getCurrentUser().delete();
-                finishAffinity();
+//                mAuth.getCurrentUser().delete();
+                user = FirebaseAuth.getInstance().getCurrentUser();
+                if (user != null) {
+                    user.delete()
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    Toast.makeText(getApplicationContext(), "계정이 삭제 되었습니다.", Toast.LENGTH_LONG).show();
+                                    finish();
+                                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                }
+                            });
+                }
+//[출처] [안드로이드 스튜디오] Firebase Authentication을 이용한 간단한 회원가입및 로그인 구현하기|작성자 코스모스
+
+//                finishAffinity();
             }
         });
     }
