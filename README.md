@@ -16,6 +16,12 @@
 
 2020/04/15 (~AdvancedWidgets) AutoFlipping TabHostPet
 
+2020/04/23 MenuChangingBackground ButtonMenu AlertDialog
+
+2020/04/29 SimpleDiary SDImageViewer 
+
+2020/05/28 FireBaseDBTest
+
 -----------------------
 
 ## ListView 간단 사용법
