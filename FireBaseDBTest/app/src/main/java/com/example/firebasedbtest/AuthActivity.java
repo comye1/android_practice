@@ -6,10 +6,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -147,6 +151,13 @@ public class AuthActivity extends AppCompatActivity {
     void Display(String text){
 
         TextView message = new TextView(getApplicationContext());
+
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        layoutParams.setMargins(10,10,10,10);
+        message.setLayoutParams(layoutParams);
+
+        message.setBackgroundColor(Color.rgb(255,235,155));
+        message.setPadding(10,10,10,10);
         message.setText(text);
         message.setTextSize(20);
         //스크롤뷰 내 리니어레이아웃에 텍스트뷰 추가
